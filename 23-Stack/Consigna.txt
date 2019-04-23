@@ -19,7 +19,7 @@ seria en definitiva un if
 
 b) El Stack de la primera parte es utilizado para almacenar oraciones de cualquier longitud. 
 
-Se debe implementar el mensaje find de SenteceFinderByPrefix que dado un prefijo se encarga de devolver todas las oraciones almacenadas en el Stack que contengan dicho prefijo.
+Se debe implementar el mensaje find de SentenceFinderByPrefix que dado un prefijo se encarga de devolver todas las oraciones almacenadas en el Stack que contengan dicho prefijo.
 
 Por ej. si el prefijo es 'Wint', y las oraciones en el Stack son 'winter is coming', 'winning is everything', 'The winds of Winter' y 'Winter is here' sólo debería devolver la última.
 
