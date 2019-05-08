@@ -1,0 +1,2 @@
+Hacer pasar los tests de tal forma que ni Customer, ni Professor ni Student implementen el mensaje #asShowable.
+Los tests se pueden modificar en lo que respecta a la construccion del TextField. 
