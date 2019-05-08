@@ -1,0 +1,1 @@
+Modificar el diseño de tal manera que se puedan combinar las distintas "conexiones" sin necesidad de usar subclasificación para ello o tener que crear nuevas clases
