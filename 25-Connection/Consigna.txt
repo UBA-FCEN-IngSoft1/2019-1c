@@ -1,1 +1,4 @@
-Modificar el diseño de tal manera que se puedan combinar las distintas "conexiones" sin necesidad de usar subclasificación para ello o tener que crear nuevas clases
+Modificar el diseño de tal manera que se puedan combinar las distintas "conexiones" sin necesidad de usar subclasificación para ello o tener que crear nuevas clases.
+
+Bonus Track: La solución tiene un nuevo test con un bonus track.
+El primero que resuelva el bonus track y mande la solución a la lista de alumnos antes del inicio de la siguiente clase gana un punto adicional en la nota final
