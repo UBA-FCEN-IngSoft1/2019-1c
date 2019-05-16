@@ -1,0 +1,31 @@
+Contamos con un modelo de reportes basados en las propiedades de los 
+enteros y cinco test funcionales sobre dichas operaciones.
+
+Test01 reporta factorial, números romanos y logaritmo natural
+Test02 reporta el número en bases binaria, octal y hexadecimal
+Test03 reporta si el número es primo utilizando la criba de eratóstenes 
+, tambien nextPrime y raiz (operaciones costosas)
+
+Test04 combina las propiedades básicas y las complejas (las vistas en 
+test01 y test03)
+Test05 combina las propiedades básicas y las complejas (las vistas en 
+test01 y test03) y agrega la de las bases (test02)
+
+Ejercicio 1) Corran los tests y vean por qué fallan.
+Ejercicio 2) Propongan una solución tocando la menor cantidad de código 
+posible (no se pueden tocar los tests)
+Ejercicio 3) (Spoiler Alert) Si están perdidos piensen en los conceptos 
+de paralelizacion (fork/wait) y sincronizacion (signal) que vimos en la 
+materia. (No se desesperen - mandaremos un mail con ayuda extra en los 
+próximos días por si se traban acá - pero la idea es que lo resuelvan 
+solos)
+Ejercicio 4) ¿Qué problema tiene la solución 3? (Spoiler Alert II - 
+también si se traban acá los vamos a ayudar a ver porque es un problema 
+con un correo electrónico los próximos días)
+Ejercicio 5) Hay dos tipos de soluciones que deberían emerger. Están muy 
+relacionadas con uno de los patrones que dio Hernán el lunes. Pueden 
+entregar una o ambas siempre y cuando eliminen el problema de la 
+solución 3. Recuerden que la mejor solución es la que implica tocar 
+menos código existente.
+
+ 
