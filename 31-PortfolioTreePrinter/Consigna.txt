@@ -1,0 +1,23 @@
+Ahora que el banco posee la funcionalidad de tener portfolios, quiere empezar a ofrecer más opciones a sus clientes. Para ello agregará un nuevo tipo de transacción, la transferencia entre cuentas y sumará la posibilidad de sacar reportes sobre las operaciones realizadas.
+
+Una transferencia es una transacción que tiene "dos patas". La pata de la extracción, o sea de donde se saca la plata, y la pata del depósito, o sea a donde se deposita la plata. Una transferencia se realiza entonces entre dos cuentas y por un valor. Algo importante a tener en cuenta es que se tiene que poder navegar desde la pata de la extracción a la transferencia y de esta a la pata del depósito y viceversa y hay que evitar tener redundancia de información (o sea, el valor de la transacción debe estar en un solo lugar y no repetido en cada pata).
+
+Respecto de los reportes, se deben poder ejecutar sobre una ReceptiveAccount o un Portfolio de manera indistinta y se espera tener dos reportes inicialmente: 1) el resumen de cuentas (Account Summary) 2) el neto de transferencias (Transfer Net).
+El resumen de cuenta debe generar una linea por cada transacción realizada en una cuenta con el siguiente formato:
+
+Depósito por 100.
+Extracción por 50.
+Salida por transferencia de 20.
+Entrada por transferencia de 30.
+
+Este sería el resumen de cuenta esperado de una cuenta a la cual se le realizó un depósito por 100, una extracción por 50, se le sacó 20 por una transferencia y recibió 30 por otra transferencia.
+
+El reporte de neto de transferencias debe devolver el resultado de sumar todos los depósitos por transferencias y restarle todas las extracciones por transferencias. Para el ejemplo anterior, el neto de transferencias seria 10.
+
+El banco prevé agregar muchos reportes nuevos en un tiempo inmediato, por lo tanto el modelo final para sacar reportes debe cumplir con los siguientes requerimientos de extensibilidad: 
+1) Al crear un nuevo reporte no se tiene que modificar la jerarquía de cuentas
+2) Al crear un nuevo reporte no se tiene que modificar la jerarquía de transacciones
+3) Crear un nuevo reporte debe implicar crear clases nuevas únicamente y no modificar ninguna existente.
+
+Resolver este ejercicio por medio de TDD.
+
