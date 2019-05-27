@@ -130,9 +130,9 @@ value
 	self subclassResponsibility ! !
 
 
-!IntegerReport methodsFor: 'time consuption simulation' stamp: 'HAW 5/12/2019 19:14:02'!
-wait
-
+!IntegerReport methodsFor: 'time consuption simulation' stamp: 'MC 5/26/2019 14:57:58'!
+simulatePreprocessing
+	"This method should not be changed or overriden"
 	(Delay forSeconds: 1) wait.
 ! !
 
@@ -155,9 +155,9 @@ IntegerReport subclass: #CombinedIntegerPropertiesReport
 	poolDictionaries: ''
 	category: 'Ingsoft-IntegerReports'!
 
-!CombinedIntegerPropertiesReport methodsFor: 'reporting' stamp: 'HAW 5/12/2019 20:12:03'!
+!CombinedIntegerPropertiesReport methodsFor: 'reporting' stamp: 'MC 5/26/2019 14:59:13'!
 value
-
+	"This method might be changed"
 	| basicPropertiesLines complexPropertiesLines lines |
 	
 	lines := OrderedCollection new.
@@ -178,9 +178,9 @@ IntegerReport subclass: #CompleteIntegerReport
 	poolDictionaries: ''
 	category: 'Ingsoft-IntegerReports'!
 
-!CompleteIntegerReport methodsFor: 'reporting' stamp: 'HAW 5/12/2019 20:12:17'!
+!CompleteIntegerReport methodsFor: 'reporting' stamp: 'MC 5/26/2019 14:59:20'!
 value
-
+	"This method might be changed"
 	| combinedPropertiesLines differentBasesLines lines |
 	
 	lines := OrderedCollection new.	
@@ -209,12 +209,12 @@ addNumberInBase: aBase to: lines title: aTitle
 	! !
 
 
-!IntegerOnDifferentBasesReport methodsFor: 'reporting' stamp: 'HAW 5/12/2019 20:04:08'!
+!IntegerOnDifferentBasesReport methodsFor: 'reporting' stamp: 'MC 5/26/2019 14:58:17'!
 value
 
 	| lines |
 	
-	self wait.
+	self simulatePreprocessing.
 	lines := OrderedCollection new.
 	self 
 		addNumberInBase: 2 to: lines title: 'Binary';
@@ -245,12 +245,12 @@ IntegerPropertiesReport subclass: #BasicIntegerPropertiesReport
 	poolDictionaries: ''
 	category: 'Ingsoft-IntegerReports'!
 
-!BasicIntegerPropertiesReport methodsFor: 'reporting' stamp: 'HAW 5/12/2019 20:02:09'!
+!BasicIntegerPropertiesReport methodsFor: 'reporting' stamp: 'MC 5/26/2019 14:58:26'!
 value
 
 	| lines |
 	
-	self wait.
+	self simulatePreprocessing.
 	lines := OrderedCollection new.
 	self 
 		addLineTo: lines title: 'Factorial' with: [ integerToAnalize factorial ];
@@ -267,12 +267,12 @@ IntegerPropertiesReport subclass: #ComplexIntegerPropertiesReport
 	poolDictionaries: ''
 	category: 'Ingsoft-IntegerReports'!
 
-!ComplexIntegerPropertiesReport methodsFor: 'reporting' stamp: 'HAW 5/12/2019 20:05:39'!
+!ComplexIntegerPropertiesReport methodsFor: 'reporting' stamp: 'MC 5/26/2019 14:58:31'!
 value
 
 	| lines |
 	
-	self wait.
+	self simulatePreprocessing.
 	lines := OrderedCollection new.
 	self 
 		addLineTo: lines title: 'Prime?' with: [ integerToAnalize isPrime ];
