@@ -42,12 +42,12 @@ Portfolio de la familia
 Se espera que el resumen de cuenta especial se muestre de la siguiente manera:
 Portfolio de la familia
    Cuenta Mia
-      Deposito por xxx
+      Depósito por xxx
       Extracción por yyy
       Balance = bbb
    Portfolio de hijos
       Cuenta de Juan
-         Deposito por zzz
+         Depósito por zzz
          Extracción por nnn
          Balance = bbb
       Cuenta de Angeles
