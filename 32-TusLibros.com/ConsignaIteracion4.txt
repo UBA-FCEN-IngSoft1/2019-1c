@@ -1,0 +1,59 @@
+Para la 4ta iteración de "Tus Libros" se requiere implementar finalmente la cara externa de la interfaz REST y construir la prueba de concepto de un prototipo de aplicación cliente, que consuma los servicios provistos por dicha interfaz, siguiendo una arquitectura cliente-servidor.
+
+Con respecto a la interfaz Rest, podremos hacer uso de WebClient y WebServer del paquete WebCliente.pck.st (https://github.com/Cuis-Smalltalk/Cuis-Smalltalk-Dev/tree/master/Packages/Features), para redireccionar los pedidos del exterior a los mensajes que sabe responder TusLibrosSystemFacade. Para más información, pueden ver el ejemplo incluído (SubstringsClientServerDemo) y browsear los mensajes definidos en las clases/instancias de WebClient y WebServer. Recuerden que deben instalar el paquete en su imagen de CuisU. 
+
+Para el prototipo de aplicación cliente que deben construir, y su GUI gráfica, se recomienda utilizar e instalar en sus imágenes los paquetes incluídos en:
+
+https://github.com/Cuis-Smalltalk/Morphic
+
+Instálenlos todos y explórenlos. Si no los instalan, la demo incluída de substrings de referencia puede no funcionar correctamente. Esta deben incluirla en la imagen DESPUÉS de incluir dichos paquetes. No dejen de incluir y revisar paquetes como Morphic-Widgets-Extras.pck.st o los que se encuentran en los subdirectorios, como Morphic-Misc1.pck.st.
+
+Luego pueden desde el propio menú del world de Smalltalk crear un nuevo morph 
+
+El prototipo que se quiere construir debe:
+
+1) Permitir la creación de un carrito. Para ello se debe poder ingresar un usuario y contraseña válidos en textboxes claramente identificados para ello en una ventana, y presionar un botón "Create cart".
+
+2) Si el usuario y contraseña es válido se debe abrir una nueva ventana que muestre el catálogo de productos de la tienda en una lista. Se debe poder presionar un botón de "Add product to cart" para pasar elementos de dicho catálogo a otra lista que represente al carrito. Ambas listas deben estar claramente identificadas con labels. Sería deseable poder ingresar en un textbox o similar la cantidad de elementos que se deben agregar de un producto seleccionado del catalogo dado. Recuerden que el agregar elementos al carrito implica modificar al modelo que corre en el servidor. Si el usuario y contraseña es inválido se debe informar de esta situación de alguna manera que ustedes elijan.
+
+3) Cuando el usuario está conforme con su selección de productos, debe de poder presionar un botón de "Check out". El mismo debería efectuar el check out y realizar la venta correspondiente. Se desea que se abra una ventana de transcript, y se visualice allí que efectivamente la compra se hizo correctamente, junto a un historial actualizado de compras del mismo. 
+
+Aclaraciones:
+
+a) Los pasos de arriba son un conjunto mínimo de funcionalidades requeridas. Si quieren hacer algo más completo, pueden hacerlo por puntos extra. Por el momento los objetos simulados de la iteración anterior (como el merchant processor) podrán seguir siendo tratados de la misma manera.
+b) Deberán agregar al menos un servicio a su modelo que permita adquirir el catálogo de productos para visualizarlo en la lista de la GUI.
+c) No olviden que todo lo visto en la materia hasta ahora sigue valiendo ;) Lo que puedan traten de desarrollarlo utilizando TDD, eviten código repetido, los ifs innecesarios, piensen en las reglas de diseño que vimos, etc...
+d) Pueden no seguir a raja tabla los formatos de URL y devolución de strings estipulados en la consigna original.
+e) Pueden basarse en la demo provista (substrings) y elegir los mismos morphs, o no, y utilizar otros que ustedes mismos investiguen. En la manera de lo posible sería bueno que el modelo de los morphs no conozca a los morphs propiamente dichos (miren la demo provista y piensen la ventaja de esto).
+f) La comunicación entre cliente y servidor es sincrónica en la demo provista. Hacerla de forma asincrónica para el nuevo prototipo da puntos extra.
+
+Importante: 
+
+Con respecto a la demo incluida de referencia, además de instalar los paquetes especificados arriba, deben incluir también (arrastrando a CuisU) un fix al InnerTextMorph (InnerTextMorph-processKeystrokelocalposition.st) para que todo funcione correctamente.
+
+Para abrir el server que sabe escuchar el:
+
+http://localhost:8080/sayHi
+
+y el:
+
+http://localhost:8080/substrings?sentence=i%20am%20one%20with%20the%20force%20and%20the%20force%20is%20with%20me
+
+puede abrir un workspace y evaluar:
+
+server := SubstringsServerController new.
+
+Para darlo de baja: 
+
+server stopListening.
+server destroy.
+
+(Si tienen algún problema de perder la referencia del ServerController para darlo de baja, recuerden que siempre pueden utilizar: SubstringsServerController allInstances).
+
+Luego para abrir una ventana cliente y utilizarlo:
+
+client := SubstringsClientWindow open.
+
+
+
+
